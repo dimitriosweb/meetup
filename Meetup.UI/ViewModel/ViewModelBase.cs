@@ -8,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace Meetup.UI.ViewModel
 {
-    //DRY
     public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        //OCP
         protected virtual void OnPropertyChange([CallerMemberName]string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
