@@ -2,10 +2,11 @@
 using Meetup.UI.Data;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Meetup.UI.ViewModel
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : ViewModelBase
     {
 
         public MainViewModel(IFriendDataService friendDataService)
@@ -31,14 +32,10 @@ namespace Meetup.UI.ViewModel
             set
             {
                 _selectedFriend = value;
-                OnPropertyChange("SelectedFriend");
+                OnPropertyChange();
             }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName);
-        }
+
 
         private Friend _selectedFriend;
         private IFriendDataService _friendDataService;
