@@ -1,4 +1,5 @@
 ﻿using Meetup.UI.Data;
+using Meetup.UI.Startup;
 using Meetup.UI.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -16,8 +17,8 @@ namespace Meetup.UI
     public partial class App : Application
     {
         private void Application_Startup(object sender, StartupEventArgs e)
-        {
-            var mainWindow = new MainWindow(new MainViewModel(new FriendDataService()));
+        {          
+            var mainWindow = UnityConfig.RegisterComponents();
             mainWindow.Show();
         }
     }
