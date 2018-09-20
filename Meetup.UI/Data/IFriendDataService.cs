@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Meetup.Model;
 
 namespace Meetup.UI.Data
 {
     public interface IFriendDataService
     {
-        IEnumerable<Friend> GetAll();
+        Task<List<Friend>> GetAllAsync();
     }
 }

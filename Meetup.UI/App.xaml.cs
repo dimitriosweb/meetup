@@ -18,7 +18,7 @@ namespace Meetup.UI
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {          
-            var mainWindow = UnityConfig.RegisterComponents();
+            var mainWindow = UnityConfig.ResolveMainWindow();
             mainWindow.Show();
         }
     }
